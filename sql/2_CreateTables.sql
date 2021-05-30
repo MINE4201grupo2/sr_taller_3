@@ -1,71 +1,27 @@
-use taller1;
+use taller3;
 
 CREATE TABLE IF NOT EXISTS `users`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
+    `user_id` varchar(255) NOT NULL UNIQUE,
     `email` varchar(255) NOT NULL UNIQUE,
-    `gender` char(1) DEFAULT NULL,
-    `age` int(11) DEFAULT NULL,
-    `country` varchar(255) DEFAULT NULL,
     `password` varchar(255) NOT NULL, 
-    `created_at` datetime NOT NULL, 
-    `updated_at` datetime NOT NULL, 
+    `created_at` datetime default NOW(), 
+    `updated_at` datetime  default NOW(), 
     PRIMARY KEY (`id`));
 
-
-CREATE TABLE IF NOT EXISTS `user_listening_habits`(
+CREATE TABLE IF NOT EXISTS `movies`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `user_id` int(11) NOT NULL UNIQUE,
-    `track_id` int(11) DEFAULT NULL,
-    `artist_id` int(11) DEFAULT NULL,
-    `recomendation_score` decimal(4,4) DEFAULT NULL,
-    `created_at` datetime NOT NULL, 
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
-    FOREIGN KEY (`track_id`) REFERENCES `tracks`(`id`),
-    FOREIGN KEY (`artist_id`) REFERENCES `artists`(`id`));
-
-CREATE TABLE IF NOT EXISTS `tracks`(
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `music_track_id` varchar(100) DEFAULT NULL,
-    `music_track_name` varchar(500) DEFAULT NULL,
+    `movies_id` varchar(100) DEFAULT NULL,
+    `title` varchar(500) DEFAULT NULL,
+    `genres` varchar(500) DEFAULT NULL,
     PRIMARY KEY (`id`));
 
-CREATE TABLE IF NOT EXISTS `artists`(
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `music_artist_id` varchar(100) DEFAULT NULL,
-    `music_artist_name` varchar(500) DEFAULT NULL,
-    PRIMARY KEY (`id`));
+ALTER TABLE movies CONVERT TO CHARACTER SET utf8;
 
-ALTER TABLE artists CONVERT TO CHARACTER SET utf8;
-ALTER TABLE tracks CONVERT TO CHARACTER SET utf8;
--- show tables;
-DROP TABLE IF EXISTS `preferences`;
-DROP TABLE IF EXISTS `preferences_artists`;
-DROP TABLE IF EXISTS `preferences_tracks`;
-CREATE TABLE IF NOT EXISTS `preferences_artists`(
+CREATE TABLE IF NOT EXISTS `recomendations_movies`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `user_id` int(11) NOT NULL,
-    `artist_name` varchar(255) DEFAULT NULL,
-    `score` int(11) DEFAULT 5,
-    `created_at` datetime NOT NULL, 
-    PRIMARY KEY (`id`,`user_id` ),
-    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`));
-
-CREATE TABLE IF NOT EXISTS `preferences_tracks`(
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `user_id` int(11) NOT NULL,
-    `track_name` varchar(255) DEFAULT NULL,
-    `created_at` datetime NOT NULL, 
-    `score` int(11) DEFAULT 5,
-    PRIMARY KEY (`id`,`user_id` ),
-    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`));
-ALTER TABLE preferences_tracks CONVERT TO CHARACTER SET utf8;
-ALTER TABLE preferences_artists CONVERT TO CHARACTER SET utf8;
-
-CREATE TABLE IF NOT EXISTS `recomendations_tracks`(
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `user_id` int(11) NOT NULL,
-    `track_name` varchar(255) DEFAULT NULL,
+    `movie_id` varchar(255) DEFAULT NULL,
     `recomendation_score` decimal(2,1) DEFAULT NULL,
     `model` varchar(15) DEFAULT 'coseno',
     `tipo_modelo` varchar(15) DEFAULT 'item', 
@@ -73,16 +29,14 @@ CREATE TABLE IF NOT EXISTS `recomendations_tracks`(
     PRIMARY KEY (`id`,`user_id` ),
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`));
 
-CREATE TABLE IF NOT EXISTS `recomendations_artists`(
+ALTER TABLE recomendations_movies CONVERT TO CHARACTER SET utf8;
+
+DROP TABLE IF EXISTS `preferences`;
+CREATE TABLE IF NOT EXISTS `preferences`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `user_id` int(11) NOT NULL,
-    `artist_name` varchar(255) DEFAULT NULL,
-    `recomendation_score` decimal(2,1) DEFAULT NULL,
-    `model` varchar(15) DEFAULT 'coseno',
-    `tipo_modelo` varchar(15) DEFAULT 'item',
-    `created_at` datetime default NOW(), 
+    `movie_id` varchar(255) DEFAULT NULL,
+    `score` int(11) DEFAULT 5,
+    `created_at` datetime NOT NULL, 
     PRIMARY KEY (`id`,`user_id` ),
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`));
-
-ALTER TABLE recomendations_artists CONVERT TO CHARACTER SET utf8;
-ALTER TABLE recomendations_tracks CONVERT TO CHARACTER SET utf8;

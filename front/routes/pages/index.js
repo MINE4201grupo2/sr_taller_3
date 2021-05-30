@@ -2,18 +2,14 @@ module.exports = (app) => {
 
   var authenticateController=require('./../../controllers/authenticate-controller');
   var registerController=require('./../../controllers/register-controller');
-  var artistsController=require('./../../controllers/artists-controller');
-  var tracksController=require('./../../controllers/tracks-controller');
-  var preferencesController=require('../../controllers/preferences-artists-controller');
-  var preferencesTracksController=require('../../controllers/preferences-tracks-controller');
-  var recomendationsArtistsController=require('../../controllers/recomendation-artists-controller');
-  var recomendationTracksController=require('../../controllers/recomendation-tracks-controller');
+  var moviesController=require('../../controllers/movies-controller');
+  var preferencesController=require('../../controllers/preferences-controller');
+  var recomendationsController=require('../../controllers/recomendation_controller');
   var runController=require('../../controllers/run');
 
   app.post('/controllers/register-controller/', registerController.register);
   app.post('/controllers/authenticate-controller/', authenticateController.authenticate);
-  app.post('/controllers/preferences-artists-controller/', preferencesController.postPreferences);
-  app.post('/controllers/preferences-tracks-controller/', preferencesTracksController.postPreferences);
+  app.post('/controllers/preferences-controller/', preferencesController.postPreferences);
 
   /* GET pages/users listing. */
   app.get('/', (req, res) => {
@@ -63,11 +59,9 @@ module.exports = (app) => {
 
   });
 
-  app.get("/preference-artists", artistsController.listArtists);
-  app.get("/preference-tracks", tracksController.listTracks);
+  app.get("/preference", moviesController.listMovies);
   
-  app.post('/recomendation-artists', recomendationsArtistsController.listRecomendations);
-  app.post('/recomendation-tracks', recomendationTracksController.listRecomendations);
+  app.post('/recomendation-movies', recomendationsController.listRecomendations);
 
   app.get("/runController", runController.runController);
 

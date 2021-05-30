@@ -107,3 +107,7 @@ dist
 data/
 
 .vscode
+.ipynb_checkpoints
+ml-25m/
+preprocesamiento/ml-25m.zip
+ml-25.zip

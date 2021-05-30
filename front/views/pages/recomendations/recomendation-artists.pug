@@ -6,7 +6,7 @@ block content
       .col-xs-12
         nav.breadcrumb.ph-3.small.uppercase
           a.b.item(href=`/`) INICIO
-          a.b.item(href=`/preference-artists`) PREFERENCIA-ARTISTA
+          a.b.item(href=`/preference-artists`) PREFERENCIA
 
   .container
     p Welcome to to #{userProfile.email}!
@@ -24,7 +24,7 @@ block content
                         th Score
                     each variable in artists
                         tr
-                            td #{variable.artist_name}
+                            td #{variable.title}
                             td #{variable.recomendation_score}
                                
           .p-3.brt-1

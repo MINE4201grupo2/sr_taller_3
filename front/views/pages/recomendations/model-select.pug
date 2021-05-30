@@ -18,7 +18,7 @@ block content
           .p-3
             .msg.error#form-results
             .row
-              form.col-xs-6(id="preferencesForm" action=config.apiUrl+`/recomendation-tracks` method="post" data-error="#form-results")
+              form.col-xs-6(id="preferencesForm" action=`/recomendation-movies` method="post" data-error="#form-results")
                 table(style='width:100%', border='1')
                     tr
                         th Nombre
@@ -36,25 +36,7 @@ block content
                         
                 .row
                   .col-xs-12.tr
-                    button.primary.w-100-xs(type="submit") Ver tracks
+                    button.primary.w-100-xs(type="submit") Ver peliculas
 
-              form.col-xs-6(id="preferencesForm" action=config.apiUrl+`/recomendation-artists` method="post" data-error="#form-results")
-                table(style='width:100%', border='1')
-                    tr
-                        th Nombre
-                        th Elegir
-                    each model in models
-                        tr
-                            td #{model}
-                            td 
-                                input(type='radio' value=`${model}` name='model')  
-                .row
-                  .col-xs-12.tr
-                    select(name='type_model',  value=`${val}`)
-                      each val in type_models
-                          option=val                      
-                .row
-                  .col-xs-12.tr
-                    button.primary.w-100-xs(type="submit") Ver artistas
           .p-3.brt-1
             a(href="/cerrar-sesion") Cerrar sesión

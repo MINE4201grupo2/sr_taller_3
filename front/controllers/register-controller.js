@@ -5,12 +5,14 @@ var Cryptr = require('cryptr');
 module.exports.register=function(req,res){
   var today = new Date();
   var encryptedString = cryptr.encrypt(req.body.password);
+
+  let re = /^(.*?)\@/
+  let userId= req.body.email
+  userId = re.exec(userId)[1];
   var user={
-      "age": req.body.age,
-      "country":req.body.country,
+      "user_id": userId,
       "email":req.body.email,
       "password":encryptedString,
-      "gender":req.body.gender,
       "created_at":today,
       "updated_at":today
   }
