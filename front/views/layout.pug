@@ -1,0 +1,13 @@
+doctype html
+html(lang='es')
+  head
+    include fragments/head.pug
+    include fragments/metatag_simple.pug
+
+  body(api_url='/')
+
+    include fragments/header_home
+    .navbar-fixed
+      block content
+    include fragments/footer.pug
+    include fragments/scripts.pug

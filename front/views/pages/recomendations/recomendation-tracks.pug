@@ -1,0 +1,31 @@
+extends ../../layout
+
+block content
+  .container
+    .row
+      .col-xs-12
+        nav.breadcrumb.ph-3.small.uppercase
+          a.b.item(href=`/`) INICIO
+          a.b.item(href=`/preference-tracks`) PREFERENCIA-TRACKS
+
+  .container
+    p Welcome to to #{userProfile.email}!
+    h1 Las recomendaciones del sistema son las siguientes:
+    .hr.mb-5.mt-2
+    .row.justify-content-center
+      .col-xs-12.col-md-6
+        .white.br-1.rd-0-2
+          .p-3
+            .msg.error#form-results
+            .row
+                table(style='width:100%', border='1')
+                    tr
+                        th Nombre
+                        th Score
+                    each variable in tracks
+                        tr
+                            td #{variable.track_name}
+                            td #{variable.recomendation_score}
+                               
+          .p-3.brt-1
+            a(href="/cerrar-sesion") Cerrar sesión

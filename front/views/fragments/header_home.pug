@@ -1,0 +1,58 @@
+header
+  .hide-xs
+    nav.navbar.primary.shadow.fixed.top
+      .container
+        a.logo(href='/')
+          img(src="/images/logo.png", alt="RecomendationcesParaTi")
+
+        .expand
+          ul.flex
+            li.ph-3
+              a.button.secondary(href='/registro') Registro
+            li
+              a(href='/iniciar-sesion') Iniciar Sesión
+            li
+              a(href='/cerrar-sesion')
+                i.fas.fa-sign-out-alt
+                | #{' '}Cerrar Sesión
+            li(role='menuitem')
+              a(href='/model-select')
+                i.fas.fa-shopping-bag
+                | #{' '}Recomendaciones
+            li(role='menuitem')
+              a(href='/preference-artists') Agregar artistas
+            li(role='menuitem')
+              a(href='/preference-tracks') Agregar tracks
+
+  .show-xs
+    nav.navbar.primary.shadow.fixed.top
+      ul.flex.w-100
+        li
+          a.sidenav-action.w-4.justify-content-center(href='#' data-target='#mobile-menu')
+            i.fas.fa-bars
+            span.out-screen Menú
+        li.expand
+          a.logo.justify-content-center(href='/') RecomendationcesParaTi
+
+  nav#mobile-menu.sidenav
+    .sidenav-body
+      .white-500.w-100.flex.h-3
+        .w-100.title.tc.b Cuenta
+
+      ul.list(role='menu')
+        li(role='menuitem')
+          a(href='/iniciar-sesion') Iniciar Sesión
+
+      ul.list(role='menu')
+        li(role='menuitem')
+          a(href='/model-select')
+            i.fas.fa-shopping-bag
+            | #{' '}Recomendaciones
+        li(role='menuitem')
+          a(href='/preference-artists') Agregar artistas
+        li(role='menuitem')
+          a(href='/preference-tracks') Agregar tracks
+        li(role='menuitem')
+          a(href='/cerrar-sesion')
+            i.fas.fa-sign-out-alt
+            | #{' '}Cerrar Sesión

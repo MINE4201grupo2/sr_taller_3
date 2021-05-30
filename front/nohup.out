@@ -1,0 +1,116 @@
+
+> sr_taller_1@1.0.0 start /home/estudiante/sr_taller_1/front
+> PORT=8080 node ./bin/www
+
+{ authenticate: [Function] }
+/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+TypeError: data.artists.forEach is not a function
+    at Query.<anonymous> (/home/estudiante/sr_taller_1/front/controllers/preferences-tracks-controller.js:16:22)
+    at Query.<anonymous> (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query._handleFinalResultPacket (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+    at Query.EofPacket (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+    at Protocol._parsePacket (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/estudiante/sr_taller_1/front/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+
+npm ERR! Linux 4.15.0-135-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! sr_taller_1@1.0.0 start: `PORT=8080 node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the sr_taller_1@1.0.0 start script 'PORT=8080 node ./bin/www'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the sr_taller_1 package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     PORT=8080 node ./bin/www
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs sr_taller_1
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls sr_taller_1
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/estudiante/sr_taller_1/front/npm-debug.log
+
+> sr_taller_1@1.0.0 start /home/estudiante/sr_taller_1/front
+> PORT=8080 node ./bin/www
+
+{ authenticate: [Function] }
+
+> sr_taller_1@1.0.0 start /home/estudiante/sr_taller_1/front
+> PORT=8080 node ./bin/www
+
+{ authenticate: [Function] }
+
+> sr_taller_1@1.0.0 start /home/estudiante/sr_taller_1/front
+> PORT=8080 node ./bin/www
+
+{ authenticate: [Function] }
+Killed
+
+npm ERR! Linux 4.15.0-135-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! sr_taller_1@1.0.0 start: `PORT=8080 node ./bin/www`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the sr_taller_1@1.0.0 start script 'PORT=8080 node ./bin/www'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the sr_taller_1 package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     PORT=8080 node ./bin/www
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs sr_taller_1
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls sr_taller_1
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/estudiante/sr_taller_1/front/npm-debug.log
+
+> sr_taller_1@1.0.0 start /home/estudiante/sr_taller_1/front
+> PORT=8080 node ./bin/www
+
+{ authenticate: [Function] }
+Killed
+
+npm ERR! Linux 4.15.0-135-generic
+npm ERR! argv "/usr/bin/node" "/usr/bin/npm" "start"
+npm ERR! node v8.10.0
+npm ERR! npm  v3.5.2
+npm ERR! code ELIFECYCLE
+npm ERR! sr_taller_1@1.0.0 start: `PORT=8080 node ./bin/www`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the sr_taller_1@1.0.0 start script 'PORT=8080 node ./bin/www'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the sr_taller_1 package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     PORT=8080 node ./bin/www
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs sr_taller_1
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls sr_taller_1
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/estudiante/sr_taller_1/front/npm-debug.log
+
+> sr_taller_1@1.0.0 start /home/estudiante/sr_taller_1/front
+> PORT=8080 node ./bin/www
+
+{ authenticate: [Function] }

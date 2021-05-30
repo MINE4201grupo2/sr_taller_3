@@ -1,0 +1,37 @@
+extends ../../layout
+
+block content
+  .container
+    .row
+      .col-xs-12
+        nav.breadcrumb.ph-3.small.uppercase
+          a.b.item(href=`/`) INICIO
+          a.b.item.start-hide(href=`/`) INICIAR SESIÓN
+
+
+  .container
+    h1 Iniciar Sesión
+    .hr.mb-5.mt-2
+    .row.justify-content-center
+      .col-xs-12.col-md-6
+        .white.br-1.rd-0-2
+          .p-3
+            .msg.error#form-results
+            .row
+              form.col-xs-12(class="form-signin" method="POST"  action=`/controllers/authenticate-controller/`)
+                .row
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#email(type="email" name="email" placeholder=' ' autocomplete="username" required maxlength=255)
+                        label(for='email') Usuario
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#password(type="password" name="password" placeholder=' ' autocomplete="current-password" required maxlength=255)
+                        label(for='password') Contraseña
+                .row
+                  .col-xs-12.tr
+                    button.primary.w-100-xs(type="submit") Ingresar
+          .p-3.brt-1
+            a.button.flat(href="/registro") Registrarse

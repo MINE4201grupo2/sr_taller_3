@@ -1,0 +1,8 @@
+extends ../../layout
+
+block content
+  h1= title
+  p Welcome to #{userProfile.email}!
+    div.NavButtons
+      a(href="/cerrar-sesion")
+        div.NavButton Log out

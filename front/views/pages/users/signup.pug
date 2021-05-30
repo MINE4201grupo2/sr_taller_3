@@ -1,0 +1,56 @@
+extends ../../layout
+
+block content
+  .container
+    .row
+      .col-xs-12
+        nav.breadcrumb.ph-3.small.uppercase
+          a.b.item(href=`/`) INICIO
+          a.b.item(href=`/registro`) REGISTRO
+
+  .container
+    h1 Registrarse
+    .hr.mb-5.mt-2
+    .row.justify-content-center
+      .col-xs-12.col-md-6
+        .white.br-1.rd-0-2
+          .p-3
+            .msg.error#form-results
+            .row
+              form.col-xs-12(id="signupForm" action=`/controllers/register-controller/` method="post" data-error="#form-results")
+                .row
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#email(type="email" name="email" placeholder=' ' required maxlength=255)
+                        label(for='email') Correo Electrónico
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#email(type="text" name="country" autocomplete="USA" placeholder=' ' required maxlength=255)
+                        label(for='pais') País
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#email(type="text" name="age" autocomplete="25" placeholder=' ' required maxlength=2)
+                        label(for='edad') Edad
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#email(type="text" name="gender" placeholder=' ' required maxlength=1)
+                        label(for='genero') Genero (F o M)
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#password(type="password" name="password" autocomplete="1234" placeholder=' ' required maxlength=255)
+                        label(for='password') Contraseña
+                  .col-xs-12
+                    .form-group
+                      .form-control
+                        input#password2(type="password" name="password2" placeholder=' ' same="#password" same-msg="Las contraseñas no son iguales")
+                        label(for='password2') Confirmar Contraseña
+                .row
+                  .col-xs-12.tr
+                    button.primary.w-100-xs(type="submit") Completar registro
+          .p-3.brt-1
+            a.button.flat(href="/") Iniciar Sesión

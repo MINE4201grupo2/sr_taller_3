@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  #company.container(data-slug=slug)
+    h1.mt-6 Información recibida
+    .row.justify-content-center
+      .col-xs-12.col-md-6
+        .oh.white.br-1.rd-0-2
+          .p-3
+            .row
+              .col-xs-12
+                .msg.action
+                  | #{message}

@@ -1,0 +1,16 @@
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,1,'5.0', now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,2,4, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,3,3, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,4,2, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,5,1, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,6,2, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,7,3, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,8,2, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,9,5, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,10,4, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,11,3, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,12,2, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,13,1, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,14,4, now());
+INSERT INTO `recomendations_tracks` (`user_id`,`track_id`,`recomendation_score`, `created_at`) VALUES (1,15,4, now());
+commit;

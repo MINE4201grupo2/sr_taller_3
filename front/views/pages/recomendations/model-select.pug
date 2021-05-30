@@ -1,0 +1,60 @@
+extends ../../layout
+
+block content
+  .container
+    .row
+      .col-xs-12
+        nav.breadcrumb.ph-3.small.uppercase
+          a.b.item(href=`/`) INICIO
+          a.b.item(href=`/model-ran`) Modelo a filtrar
+
+  .container
+    p Welcome to to #{userProfile.email}!
+    h1 Selecciona los artistas que te interesan:
+    .hr.mb-5.mt-2
+    .row.justify-content-center
+      .col-xs-12.col-md-6
+        .white.br-1.rd-0-2
+          .p-3
+            .msg.error#form-results
+            .row
+              form.col-xs-6(id="preferencesForm" action=config.apiUrl+`/recomendation-tracks` method="post" data-error="#form-results")
+                table(style='width:100%', border='1')
+                    tr
+                        th Nombre
+                        th Elegir
+                    each model in models
+                        tr
+                            td #{model}
+                            td 
+                                input(type='radio' value=`${model}` name='model')
+                .row
+                  .col-xs-12.tr
+                    select(name='type_model',  value=`${val}`)
+                      each val in type_models
+                          option=val  
+                        
+                .row
+                  .col-xs-12.tr
+                    button.primary.w-100-xs(type="submit") Ver tracks
+
+              form.col-xs-6(id="preferencesForm" action=config.apiUrl+`/recomendation-artists` method="post" data-error="#form-results")
+                table(style='width:100%', border='1')
+                    tr
+                        th Nombre
+                        th Elegir
+                    each model in models
+                        tr
+                            td #{model}
+                            td 
+                                input(type='radio' value=`${model}` name='model')  
+                .row
+                  .col-xs-12.tr
+                    select(name='type_model',  value=`${val}`)
+                      each val in type_models
+                          option=val                      
+                .row
+                  .col-xs-12.tr
+                    button.primary.w-100-xs(type="submit") Ver artistas
+          .p-3.brt-1
+            a(href="/cerrar-sesion") Cerrar sesión

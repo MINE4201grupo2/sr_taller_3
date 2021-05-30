@@ -1,0 +1,13 @@
+#delete.modal.start-hide(tabindex='-1' role='dialog')
+  .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          .b ¿Desea eliminar el proyecto?
+          button.close.close-modal.flat(type='button' data-dismiss='modal' aria-label='Cerrar')
+            span(aria-hidden='true') &times;
+
+
+        .modal-footer.tr
+          button.secondary.small.close-modal(type='button') Cancelar
+          | #{' '}
+          button.error.small.delete(type='submit') Eliminar

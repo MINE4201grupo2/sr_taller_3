@@ -1,0 +1,36 @@
+{
+  "name": "sr_taller_1",
+  "version": "1.0.0",
+  "description": "MINE4201 :: Sistemas de Recomendación :: Taller No. 1",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "cryptr": "^6.0.2",
+    "express": "^4.14.1",
+    "express-mysql-session": "^2.1.5",
+    "follow-redirects": "^1.13.3",
+    "jsonwebtoken": "^7.3.0",
+    "mysql": "^2.13.0",
+    "nodemon": "^2.0.7",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "PORT=8080 node ./bin/www",
+    "dev": "cross-env PORT=8080 nodemon ./bin/www",
+    "update": "npm outdated && ncu -u && npm install && npm audit fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MINE4201grupo2/sr_taller_1.git"
+  },
+  "author": "grupo02",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MINE4201grupo2/sr_taller_1/issues"
+  },
+  "homepage": "https://github.com/MINE4201grupo2/sr_taller_1#readme"
+}

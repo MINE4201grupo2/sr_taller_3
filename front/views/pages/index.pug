@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1.out-screen #{config.site.name}
+  .container-fluid.h-460p.h-100-xs.bg.s-cover.white-500
+    .container
+      .row
+        .col-lg-5.offset-lg-2.flex
+          | Recomendaciones de :
+          img(src="/images/favicon.ico", alt=config.site.name)
+        .col-lg-5
+          .p-9.mh-5.a-black-20.rd-0-5
+            if userProfile.loggedIn
+              h2.green BIENVENIDO #{userProfile.email}

@@ -1,0 +1,21 @@
+
+
+meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+meta(http-equiv='content-type' content='text/html; charset=UTF-8')
+title
+  | #{title} #{config.site.name}
+
+//- preload
+link(rel='preload' href='/css/style.min.css?='+config.v as='style')
+link(rel='preload' href='/css/fonts.min.css?='+config.v as='style' )
+link(rel="preload" href="/webfonts/lato-v16-latin-700.woff2" as="font" crossorigin)
+link(rel="preload" href="/webfonts/lato-v16-latin-regular.woff2" as="font" crossorigin)
+link(rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" crossorigin)
+link(rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" crossorigin)
+
+
+link(rel='preload' href='/lib/script.js?='+config.v as='script')
+
+link(rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon')
+link(rel='icon', type='image/vnd.microsoft.icon', href='/images/favicon.ico')
+link(rel='stylesheet', href='/css/style.min.css?='+config.v)
