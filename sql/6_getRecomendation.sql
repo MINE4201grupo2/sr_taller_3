@@ -1,7 +1,6 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `getRecomendation`;
 CREATE PROCEDURE `getRecomendation`(IN par_user_id int(11),in par_model varchar(15),in par_type_model varchar(15), IN par_limit int(11))
-BEGIN
      SELECT  DISTINCT ra.movie_id, m.title,
             ra.recomendation_score 
      FROM recomendations_movies AS ra
