@@ -68,8 +68,8 @@ module.exports = (app) => {
   app.get("/model-select", (req, res) => {
     if(req.session.loggedin){
       res.render('pages/recomendations/model-select', {userProfile: { email: req.session.email }, 
-                                                      models:['coseno','Jaccard','Pearson'],
-                                                      type_models:['item','user']} );
+                                                      models:['coseno'],
+                                                      } );
     }else{
         res.redirect('/iniciar-sesion');
     }   
