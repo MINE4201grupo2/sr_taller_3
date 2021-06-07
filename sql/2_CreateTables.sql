@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS `recomendations_movies`(
     `model` varchar(15) DEFAULT 'coseno',
     `tipo_modelo` varchar(15) DEFAULT 'item', 
     `created_at` datetime default NOW(), 
-    PRIMARY KEY (`id`,`user_id` ),
-    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`));
+    PRIMARY KEY (`id`,`user_id` )
+    );
 
 ALTER TABLE recomendations_movies CONVERT TO CHARACTER SET utf8;
 
