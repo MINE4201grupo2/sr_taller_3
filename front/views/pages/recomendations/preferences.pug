@@ -27,11 +27,11 @@ block content
                         th Me interesa o no
                     each variable in artists
                         tr
-                            td #{variable.id}
+                            td #{variable.movies_id}
                             td #{variable.title}
                             td #{variable.genres}
                             td 
-                                input(type='checkbox' value=`${variable.id}` name='artists')
+                                input(type='checkbox' value=`${variable.movies_id}` name='artists')
                 .row
                   .col-xs-12.tr
                     button.primary.w-100-xs(type="submit") Guardar preferencias
