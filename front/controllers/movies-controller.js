@@ -10,7 +10,7 @@ module.exports.listMovies= function(req,res){
         res.render('pages/recomendations/preferences',{title: 'getArtists',
                             userProfile: { email: req.session.email },
                             artists: results}
-                  );
+                  ); 
       }
 
     });

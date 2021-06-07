@@ -25,8 +25,8 @@ module.exports.postPreferences=function(req,res){
         connection.query(sql_artists,[inserts], function (error, results, fields) {
             if (error) throw error
 
-           // res.redirect('/runController');
-           res.redirect('/');
+           res.redirect('/runController');
+           //res.redirect('/');
         });
     });
 
