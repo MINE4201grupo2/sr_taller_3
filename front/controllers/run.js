@@ -4,10 +4,10 @@ const logOutput = (name) => (message) => console.log(`[${name}] ${message}`)
 
 const connection = require('./../db');
 module.exports.runController=function(req,res){
-connection.query('SELECT user_id FROM users WHERE email = ?',[req.session.email], function (error, results, fields) {
+connection.query('SELECT id FROM users WHERE email = ?',[req.session.email], function (error, results, fields) {
     if(error) throw error
-    userId = results[0].user_id;
-    console.log(results[0].user_id)
+    userId = results[0].id;
+    console.log(results[0].id)
     function run() {
         return new Promise((resolve, reject) => {
           const process = spawn('python', ['./controllers/new_user.py', results[0].id]);
