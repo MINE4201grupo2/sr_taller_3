@@ -39,7 +39,8 @@ def main(argv):
   cursor = cnx.cursor()
   # Print arguments one by one
   print ('First argument:',  str(argv))
-  file_path = './movies_bagofwords.csv'
+  file_path = './controllers/movies_bagofwords.csv'
+  #file_path = 'movies_bagofwords.csv'
   df=pd.read_csv(file_path, sep = ',', header=0, names = ["movieId","title","bagofwords"] )
   # instantiating and generating the count matrix
   count = CountVectorizer()
@@ -82,32 +83,36 @@ def main(argv):
   #cursor.execute(sql_artists)
   ratings = pd.DataFrame()
   ratings = ratings.append(pd.read_sql(sql_artists, cnx))
-  print(df)
+  #print(ratings)
 
-  # load the model from disk
-  import pickle
-  filename = 'filtrado_colaborativo.sav'
-  loaded_model = pickle.load(open(filename, 'rb'))
-
-  movies= pd.read_csv('ml-latest-small/movies.csv')
-  unique_movies = movies.movieId.unique().shape[0]
+  unique_movies = df.movieId.unique().shape[0]
   unique_users = 1
-  matrix_all = np.zeros((unique_users, unique_movies))
-  movies['movie_id_simple'] = pd.factorize(movies.moviesId)[0]
+  df['movie_id_simple'] = pd.factorize(df.movieId)[0]
+  
+  
+  sql_artists = "SELECT user_id from users where id = "+ str(user_id)
+  cursor.execute(sql_artists)
+  # get all records
+  records = cursor.fetchall()
+  #user_id = records[0][0]
+  #print(user_id)
 
   sql = "INSERT INTO `recomendations_movies` (`user_id`, `movie_id`, `recomendation_score`) VALUES (%s, %s, %s)"
 
   for i in range(0,unique_users):
       #print(user_id)
       for k in ratings.index:
-          business_id = movies['movieId'][k]
-          #print(business_id)
-          list_rec = recommendations(business_id)
-          if len(list_rec) >0:
-              for k in list_rec:
-                  cursor.execute(sql, (str(user_id),str(k),5))
-                  cnx.commit()
-          
+          movie_id=int(ratings['movie_id'][k])
+          #print(movie_id)
+          if movie_id !=0:
+            list_rec = recommendations(movie_id)
+            #print(list_rec)
+            if len(list_rec) >0:
+                #print(movie_id)
+                for j in list_rec:
+                    #print(j)
+                    cursor.execute(sql, (str(user_id),str(j),5))
+                    cnx.commit()
   
   cursor.close()
   cnx.close()
